@@ -1,0 +1,5 @@
+****************************
+
+delete the objects before update the model
+
+****************************
