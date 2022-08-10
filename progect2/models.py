@@ -18,7 +18,7 @@ class Manufacturers(models.Model):
 
 class Products(models.Model):
     cost_per_item =    models.PositiveBigIntegerField("Cost")
-    name_of_product =  models.CharField("name")
+    name_of_product =  models.CharField("name", max_length=300)
     manufacturer =     models.ForeignKey(Manufacturers, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
