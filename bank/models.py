@@ -22,4 +22,8 @@ class BankAccount(models.Model):
     def __str__(self) -> str:
         return self.balance
 
+class CheckingAccount(models.Model):
+    pass
 
+class SavingsAccount(models.Model):
+    pass
