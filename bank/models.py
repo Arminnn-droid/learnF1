@@ -19,13 +19,13 @@ class BankAccount(models.Model):
     type_selection =  models.CharField('account type', max_length=1, choices=types )
     
     def __str__(self) -> str:
-        return self.account_number
+        return str(self.account_number)
 
 class CheckingAccount(models.Model):
     balance =           models.DecimalField(max_digits=18, decimal_places=2)
     date_created =      models.DateField()
     last_transaction =  models.DateField()
-    account_number =    models.ManyToManyField(BankAccount.account_number)
+    account_number =    models.ManyToManyField(BankAccount)
     
     def __str__(self) -> str:
         return self.account_number
@@ -42,7 +42,7 @@ class CheckingAccount(models.Model):
 class SavingsAccount(models.Model):
     balance =         models.DecimalField(max_digits=18, decimal_places=2)
     date_created =    models.DateField()
-    account_number =  models.ManyToManyField(BankAccount.account_number)
+    account_number =  models.ManyToManyField(BankAccount)
     
     def __str__(self) -> str:
         return self.account_number
