@@ -30,6 +30,15 @@ class CheckingAccount(models.Model):
     
     def __str__(self) -> str:
         return self.account_number
+    
+    def deposit(cash, self):
+        self.balance += cash
+    
+    def check_balance(self):
+        return self.balance
+    
+    def withdrawal(self, cash):
+        self.balance -= cash
 
 class SavingsAccount(models.Model):
     balance = models.DecimalField(max_digits=18, decimal_places=2)
@@ -38,3 +47,9 @@ class SavingsAccount(models.Model):
     
     def __str__(self) -> str:
         return self.account_number
+    
+    def deposit(cash, self):
+        self.balance += cash
+    
+    def check_balance(self):
+        return self.balance
