@@ -1,2 +1,2 @@
 # learnF1
-this one is based with faradars toutorials
+A tutorial project to learn django and test myself.
